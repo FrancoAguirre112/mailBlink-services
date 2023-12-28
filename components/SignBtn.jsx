@@ -2,16 +2,16 @@ import Link from "next/link";
 
 const SignBtn = () => {
   return (
-    <div className="block md:flex items-center space-y-6 md:space-y-0 mx-auto md:flex-row space-x-3 md:space-x-6">
+    <div className="flex flex-col-reverse 2lg:flex-row w-full gap-2">
       <Link
         href="#"
-        className="text-white bg-navyBlue rounded-[24px] py-2 px-6 font-medium text-sm border border-navyBlue hover:text-navyBlue hover:bg-white hover:border hover:border-navyBlue duration-200"
+        className="w-full rounded-[24px] border border-navyBlue bg-navyBlue px-6 py-2 text-center text-sm font-medium text-white duration-200 hover:border hover:border-navyBlue hover:bg-white hover:text-navyBlue"
       >
         Sign Up
       </Link>
       <Link
         href="#"
-        className="text-navyblue bg-transparent rounded-[24px] py-2 px-6 font-medium text-sm border border-transparent hover:border-navyBlue duration-200"
+        className="text-navyblue border-navyBlue 2lg:border-transparent w-full rounded-[24px] border bg-transparent px-6 py-2 text-center text-sm font-medium duration-200 hover:border-navyBlue"
       >
         Login
       </Link>

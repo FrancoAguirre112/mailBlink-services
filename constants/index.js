@@ -13,7 +13,28 @@ import { IoMdMail } from "react-icons/io";
 import { FaSms, FaWpforms } from "react-icons/fa";
 
 export const NAV_LINKS = [
-  { href: "", key: "features", label: "Features" },
+  {
+    href: "",
+    key: "features",
+    label: "Features",
+    dropDown: [
+      {
+        href: "/features/email-marketing",
+        key: "email-marketing",
+        label: "Email Marketing",
+      },
+      {
+        href: "/features/sms-marketing",
+        key: "sms-marketing",
+        label: "SmS Marketing",
+      },
+      {
+        href: "/forms",
+        key: "forms",
+        label: "Form Builder",
+      },
+    ],
+  },
   { href: "/about", key: "about", label: "About" },
   { href: "/resources", key: "resources", label: "Resources" },
   { href: "/blog", key: "blog", label: "Blog" },
@@ -134,8 +155,10 @@ export const socialMediaLinks = [
 export const footerLinks = [
   {
     id: 1,
-    title: "MailBlink",
+    title: "Resources",
     links: [
+      { id: 1, link: "Blog", href: "#" },
+      { id: 2, link: "Marketing Guides", href: "#" },
       { id: 1, link: "Get a demo", href: "#" },
       { id: 2, link: "Contact us", href: "#" },
     ],
@@ -149,14 +172,6 @@ export const footerLinks = [
       { id: 3, link: "SMS Marketing", href: "/sms/email-marketing" },
       { id: 4, link: "Email", href: "#" },
       { id: 5, link: "Form", href: "#" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Resources",
-    links: [
-      { id: 1, link: "Blog", href: "#" },
-      { id: 2, link: "Marketing Guides", href: "#" },
     ],
   },
 ];

@@ -11,44 +11,52 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="mx-auto max-width padding-x">
+    <nav className="max-width padding-x mx-auto">
       <div className="px-8 py-6">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between py-8">
           <Link
             href="/"
-            className="font-bold text-2xl md:text-4xl text-[#17181A] font-Roboto"
+            className="font-Roboto text-2xl font-bold text-[#17181A] md:text-4xl"
           >
             MailBlink.
           </Link>
-          <div
-            className="text-3xl lg:hidden"
+          <button
+            className="text-3xl 2lg:hidden"
             onClick={() => setOpen((prev) => !prev)}
           >
             <RxHamburgerMenu />
-          </div>
-          <div className="lg:flex hidden items-center space-x-6">
+          </button>
+          <div className="hidden items-baseline space-x-6 2lg:flex  whitespace-nowrap">
             <Navlink />
             <SignBtn />
           </div>
         </div>
         {/* Mobile nav */}
-        {open && (
-          <div
-            className={`
-                lg:hidden bg-tertiary text-left fixed w-2/3 top-0 bottom-0 py-24 px-4 overflow-y-auto
-                 z-50 right-0 opacity-100 transition duration-500`}
-          >
-            <LiaTimesSolid
-              size={35}
-              className="absolute top-5 right-5 duration-300"
-              onClick={() => setOpen((prev) => !prev)}
-            />
-            <Navlink />
-            <div className="mt-12 pl-5 md:pl-0 md:mt-0">
-              <SignBtn />
-            </div>
+
+        {/* Dark background */}
+        <div
+          className={`fixed w-full h-full top-0 left-0 z-10 bg-black transition-opacity duration-500 ${
+            open
+              ? "pointer-events-auto opacity-50"
+              : "pointer-events-none opacity-0"
+          }`}
+        />
+
+        {/* Mobile links */}
+        <div
+          className={`fixed bottom-0 flex flex-col justify-between ${
+            open ? "right-0" : "-right-[100%]"
+          }  top-0 z-50 w-2/3  bg-tertiary pt-20 pb-2 text-left opacity-100 transition-all duration-500 2lg:hidden`}
+        >
+          <button className="absolute right-5 top-5 duration-300">
+            <LiaTimesSolid size={35} onClick={() => setOpen((prev) => !prev)} />
+          </button>
+
+          <Navlink />
+          <div className="flex items-center px-5">
+            <SignBtn />
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
